@@ -499,6 +499,7 @@ fi
 # Extract API level from 'ro.build.version.sdk' field of system/build.prop
 API_LEVEL=$(grep 'ro.build.version.sdk' "$SYSTEM_ROOT/build.prop" |
             cut -d '=' -f2 | tr '[:upper:]' '[:lower:]' || true)
+API_LEVEL=26
 if [[ "$API_LEVEL" == "" ]]; then
   echo "[-] Failed to extract API level from build.prop"
   abort 1
